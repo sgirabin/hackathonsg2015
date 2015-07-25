@@ -1,1 +1,12 @@
 /* Empty. Add your own CSS if you like */
+
+
+.form-postal-code {
+  width: 300px;
+  margin: 200px auto;
+}
+
+.input-postal-code {
+ margin-left: 10px;
+ margin-right: 10px;
+}

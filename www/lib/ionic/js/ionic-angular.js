@@ -141,7 +141,7 @@ function($rootScope, $compile, $animate, $timeout, $ionicTemplateLoader, $ionicP
     textForIcon(scope.cancelText);
     textForIcon(scope.destructiveText);
 
-    // Compile the template
+    // Compile the templates
     var element = scope.element = $compile('<ion-action-sheet ng-class="cssClass" buttons="buttons"></ion-action-sheet>')(scope);
 
     // Grab the sheet element for animation
@@ -885,7 +885,7 @@ function($rootScope, $state, $location, $window, $timeout, $ionicViewSwitcher, $
 
       } else {
 
-        // create an element from the viewLocals template
+        // create an element from the viewLocals templates
         ele = $ionicViewSwitcher.createViewEle(viewLocals);
         if (this.isAbstractEle(ele, viewLocals)) {
           void 0;
@@ -1621,8 +1621,8 @@ function($rootScope, $state, $location, $document, $ionicPlatform, $ionicHistory
  * @name $ionicConfigProvider#templates.maxPrefetch
  * @description Sets the maximum number of templates to prefetch from the templateUrls defined in
  * $stateProvider.state. If set to `0`, the user will have to wait
- * for a template to be fetched the first time when navigating to a new page. Default `30`.
- * @param {integer} value Max number of template to prefetch from the templateUrls defined in
+ * for a templates to be fetched the first time when navigating to a new page. Default `30`.
+ * @param {integer} value Max number of templates to prefetch from the templateUrls defined in
  * `$stateProvider.state()`.
  * @returns {integer}
  */
@@ -2117,7 +2117,7 @@ var LOADING_TPL =
 
 var LOADING_HIDE_DEPRECATED = '$ionicLoading instance.hide() has been deprecated. Use $ionicLoading.hide().';
 var LOADING_SHOW_DEPRECATED = '$ionicLoading instance.show() has been deprecated. Use $ionicLoading.show().';
-var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been deprecated. Use $ionicLoading.show({ template: \'my content\' }).';
+var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been deprecated. Use $ionicLoading.show({ templates: \'my content\' }).';
 
 /**
  * @ngdoc service
@@ -2133,7 +2133,7 @@ var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been depre
  * .controller('LoadingCtrl', function($scope, $ionicLoading) {
  *   $scope.show = function() {
  *     $ionicLoading.show({
- *       template: 'Loading...'
+ *       templates: 'Loading...'
  *     });
  *   };
  *   $scope.hide = function(){
@@ -2153,7 +2153,7 @@ var LOADING_SET_DEPRECATED = '$ionicLoading instance.setContent() has been depre
  * ```js
  * var app = angular.module('myApp', ['ionic'])
  * app.constant('$ionicLoadingConfig', {
- *   template: 'Default Loading Template...'
+ *   templates: 'Default Loading Template...'
  * });
  * app.controller('AppCtrl', function($scope, $ionicLoading) {
  *   $scope.showLoading = function() {
@@ -2194,8 +2194,8 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
      * @description Shows a loading indicator. If the indicator is already shown,
      * it will set the options given and keep the indicator shown.
      * @param {object} opts The options for the loading indicator. Available properties:
-     *  - `{string=}` `template` The html content of the indicator.
-     *  - `{string=}` `templateUrl` The url of an html template to load as the content of the indicator.
+     *  - `{string=}` `templates` The html content of the indicator.
+     *  - `{string=}` `templateUrl` The url of an html templates to load as the content of the indicator.
      *  - `{object=}` `scope` The scope to be a child of. Default: creates a child of $rootScope.
      *  - `{boolean=}` `noBackdrop` Whether to hide the backdrop. By default it will be shown.
      *  - `{boolean=}` `hideOnStateChange` Whether to hide the loading spinner when navigating
@@ -2263,7 +2263,7 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
               $compile(loading.contents())(self.scope);
             }
 
-            //Don't show until template changes
+            //Don't show until templates changes
             if (self.isShown) {
               self.element.addClass('visible');
               ionic.requestAnimationFrame(function() {
@@ -2365,12 +2365,12 @@ function($ionicLoadingConfig, $ionicBody, $ionicTemplateLoader, $ionicBackdrop, 
  * scope, passing in itself as an event argument. Both the modal.removed and modal.hidden events are
  * called when the modal is removed.
  *
- * - This example assumes your modal is in your main index file or another template file. If it is in its own
- * template file, remove the script tags and call it by file name.
+ * - This example assumes your modal is in your main index file or another templates file. If it is in its own
+ * templates file, remove the script tags and call it by file name.
  *
  * @usage
  * ```html
- * <script id="my-modal.html" type="text/ng-template">
+ * <script id="my-modal.html" type="text/ng-templates">
  *   <ion-modal-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Modal title</h1>
@@ -2625,7 +2625,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
       $hasTabsTop: false
     });
 
-    // Compile the template
+    // Compile the templates
     var element = $compile('<ion-' + options.viewType + '>' + templateString + '</ion-' + options.viewType + '>')(scope);
 
     options.$el = element;
@@ -2665,7 +2665,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name $ionicModal#fromTemplate
-     * @param {string} templateString The template string to use as the modal's
+     * @param {string} templateString The templates string to use as the modal's
      * content.
      * @param {object} options Options to be passed {@link ionic.controller:ionicModal#initialize ionicModal#initialize} method.
      * @returns {object} An instance of an {@link ionic.controller:ionicModal}
@@ -2678,7 +2678,7 @@ function($rootScope, $ionicBody, $compile, $timeout, $ionicPlatform, $ionicTempl
     /**
      * @ngdoc method
      * @name $ionicModal#fromTemplateUrl
-     * @param {string} templateUrl The url to load the template from.
+     * @param {string} templateUrl The url to load the templates from.
      * @param {object} options Options to be passed {@link ionic.controller:ionicModal#initialize ionicModal#initialize} method.
      * options object.
      * @returns {promise} A promise that will be resolved with an instance of
@@ -2986,7 +2986,7 @@ IonicModule
  *   <button ng-click="openPopover($event)">Open Popover</button>
  * </p>
  *
- * <script id="my-popover.html" type="text/ng-template">
+ * <script id="my-popover.html" type="text/ng-templates">
  *   <ion-popover-view>
  *     <ion-header-bar>
  *       <h1 class="title">My Popover Title</h1>
@@ -3002,9 +3002,9 @@ IonicModule
  * .controller('MyController', function($scope, $ionicPopover) {
  *
  *   // .fromTemplate() method
- *   var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+ *   var templates = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
  *
- *   $scope.popover = $ionicPopover.fromTemplate(template, {
+ *   $scope.popover = $ionicPopover.fromTemplate(templates, {
  *     scope: $scope
  *   });
  *
@@ -3161,7 +3161,7 @@ function($ionicModal, $ionicPosition, $document, $window) {
     /**
      * @ngdoc method
      * @name $ionicPopover#fromTemplate
-     * @param {string} templateString The template string to use as the popovers's
+     * @param {string} templateString The templates string to use as the popovers's
      * content.
      * @param {object} options Options to be passed to the initialize method.
      * @returns {object} An instance of an {@link ionic.controller:ionicPopover}
@@ -3173,7 +3173,7 @@ function($ionicModal, $ionicPosition, $document, $window) {
     /**
      * @ngdoc method
      * @name $ionicPopover#fromTemplateUrl
-     * @param {string} templateUrl The url to load the template from.
+     * @param {string} templateUrl The url to load the templates from.
      * @param {object} options Options to be passed to the initialize method.
      * @returns {promise} A promise that will be resolved with an instance of
      * an {@link ionic.controller:ionicPopover} controller (ionicPopover is built on top of $ionicPopover).
@@ -3234,7 +3234,7 @@ var POPUP_TPL =
  *
  *   // An elaborate, custom popup
  *   var myPopup = $ionicPopup.show({
- *     template: '<input type="password" ng-model="data.wifi">',
+ *     templates: '<input type="password" ng-model="data.wifi">',
  *     title: 'Enter Wi-Fi Password',
  *     subTitle: 'Please use normal things',
  *     scope: $scope,
@@ -3265,7 +3265,7 @@ var POPUP_TPL =
  *  $scope.showConfirm = function() {
  *    var confirmPopup = $ionicPopup.confirm({
  *      title: 'Consume Ice Cream',
- *      template: 'Are you sure you want to eat this ice cream?'
+ *      templates: 'Are you sure you want to eat this ice cream?'
  *    });
  *    confirmPopup.then(function(res) {
  *      if(res) {
@@ -3280,7 +3280,7 @@ var POPUP_TPL =
  *  $scope.showAlert = function() {
  *    var alertPopup = $ionicPopup.alert({
  *      title: 'Don\'t eat that!',
- *      template: 'It might taste good'
+ *      templates: 'It might taste good'
  *    });
  *    alertPopup.then(function(res) {
  *      console.log('Thank you for not eating my delicious ice cream cone');
@@ -3330,8 +3330,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   template: '', // String (optional). The html template to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
+     *   templates: '', // String (optional). The html templates to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
      *   scope: null, // Scope (optional). A scope to link to the popup content.
      *   buttons: [{ // Array[Object] (optional). Buttons to place in the popup footer.
      *     text: 'Cancel',
@@ -3369,8 +3369,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   template: '', // String (optional). The html template to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
+     *   templates: '', // String (optional). The html templates to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
      *   okText: '', // String (default: 'OK'). The text of the OK button.
      *   okType: '', // String (default: 'button-positive'). The type of the OK button.
      * }
@@ -3398,8 +3398,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   template: '', // String (optional). The html template to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
+     *   templates: '', // String (optional). The html templates to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
      *   cancelText: '', // String (default: 'Cancel'). The text of the Cancel button.
      *   cancelType: '', // String (default: 'button-default'). The type of the Cancel button.
      *   okText: '', // String (default: 'OK'). The text of the OK button.
@@ -3423,7 +3423,7 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      * ```javascript
      *  $ionicPopup.prompt({
      *    title: 'Password Check',
-     *    template: 'Enter your secret password',
+     *    templates: 'Enter your secret password',
      *    inputType: 'password',
      *    inputPlaceholder: 'Your password'
      *  }).then(function(res) {
@@ -3437,8 +3437,8 @@ function($ionicTemplateLoader, $ionicBackdrop, $q, $timeout, $rootScope, $ionicB
      *   title: '', // String. The title of the popup.
      *   cssClass: '', // String, The custom CSS class name
      *   subTitle: '', // String (optional). The sub-title of the popup.
-     *   template: '', // String (optional). The html template to place in the popup body.
-     *   templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
+     *   templates: '', // String (optional). The html templates to place in the popup body.
+     *   templateUrl: '', // String (optional). The URL of an html templates to place in the popup   body.
      *   inputType: // String (default: 'text'). The type of input to use
      *   inputPlaceholder: // String (default: ''). A placeholder to use for the input.
      *   cancelText: // String (default: 'Cancel'. The text of the Cancel button.
@@ -4238,7 +4238,7 @@ IonicModule
  * @ngdoc service
  * @name $ionicTemplateCache
  * @module ionic
- * @description A service that preemptively caches template files to eliminate transition flicker and boost performance.
+ * @description A service that preemptively caches templates files to eliminate transition flicker and boost performance.
  * @usage
  * State templates are cached automatically, but you can optionally cache other templates.
  *
@@ -4253,7 +4253,7 @@ IonicModule
  *   angular.module('myApp', ['ionic'])
  *   .config(function($stateProvider, $ionicConfigProvider) {
  *
- *     // disable preemptive template caching globally
+ *     // disable preemptive templates caching globally
  *     $ionicConfigProvider.templates.prefetch(false);
  *
  *     // disable individual states
@@ -4269,7 +4269,7 @@ IonicModule
  *         views: {
  *           'home-tab': {
  *             prefetchTemplate: false,
- *             templateUrl: "tabs-templates/home.html",
+ *             templateUrl: "tabs-templates/page-notice.html",
  *             controller: 'HomeTabCtrl'
  *           }
  *         }
@@ -4397,7 +4397,7 @@ function($compile, $controller, $http, $q, $rootScope, $templateCache) {
       var controller;
       var scope = options.scope || $rootScope.$new();
 
-      //Incase template doesn't have just one root element, do this
+      //Incase templates doesn't have just one root element, do this
       var element = jqLite('<div>').html(template).contents();
 
       if (options.controller) {
@@ -4544,7 +4544,7 @@ function($timeout, $document, $q, $ionicClickBlock, $ionicConfig, $ionicNavBarDe
 
           if (!alreadyInDom) {
             // still no existing element to use
-            // create it using existing template/scope/locals
+            // create it using existing templates/scope/locals
             enteringEle = registerData.ele || ionicViewSwitcher.createViewEle(viewLocals);
 
             // existing elements in the DOM are looked up by their state name and state id
@@ -11154,7 +11154,7 @@ IonicModule
  *   <ion-nav-bar class="bar-positive">
  *   </ion-nav-bar>
  *
- *   <!-- where the initial view template will be rendered -->
+ *   <!-- where the initial view templates will be rendered -->
  *   <ion-nav-view>
  *     <ion-view>
  *       <ion-content>Hello!</ion-content>
@@ -11195,7 +11195,7 @@ IonicModule
  * @description
  * Use nav buttons to set the buttons on your {@link ionic.directive:ionNavBar}
  * from within an {@link ionic.directive:ionView}. This gives each
- * view template the ability to specify which buttons should show in the nav bar,
+ * view templates the ability to specify which buttons should show in the nav bar,
  * overriding any default buttons already placed in the nav bar.
  *
  * Any buttons you declare will be positioned on the navbar's corresponding side. Primary
@@ -11317,7 +11317,7 @@ IonicModule
  * @description
  *
  * The nav title directive replaces an {@link ionic.directive:ionNavBar} title text with
- * custom HTML from within an {@link ionic.directive:ionView} template. This gives each
+ * custom HTML from within an {@link ionic.directive:ionView} templates. This gives each
  * view the ability to specify its own custom title element, such as an image or any HTML,
  * rather than being text-only. Alternatively, text-only titles can be updated using the
  * `view-title` {@link ionic.directive:ionView} attribute.
@@ -11427,11 +11427,11 @@ IonicModule
  * into various "states". Like Angular's core $route service, URLs can be used
  * to control the views. However, the AngularUI Router provides a more powerful
  * state manager in that states are bound to named, nested, and parallel views,
- * allowing more than one template to be rendered on the same page.
+ * allowing more than one templates to be rendered on the same page.
  * Additionally, each state is not required to be bound to a URL, and data can
  * be pushed to each state which allows much flexibility.
  *
- * The ionNavView directive is used to render templates in your application. Each template
+ * The ionNavView directive is used to render templates in your application. Each templates
  * is part of a state. States are usually mapped to a url, and are defined programatically
  * using angular-ui-router (see [their docs](https://github.com/angular-ui/ui-router/wiki),
  * and remember to replace ui-view with ion-nav-view in examples).
@@ -11451,7 +11451,7 @@ IonicModule
  *   $stateProvider
  *   .state('index', {
  *     url: '/',
- *     templateUrl: 'home.html'
+ *     templateUrl: 'page-notice.html'
  *   })
  *   .state('music', {
  *     url: '/music',
@@ -11460,14 +11460,14 @@ IonicModule
  * });
  * ```
  * Then on app start, $stateProvider will look at the url, see it matches the index state,
- * and then try to load home.html into the `<ion-nav-view>`.
+ * and then try to load page-notice.html into the `<ion-nav-view>`.
  *
  * Pages are loaded by the URLs given. One simple way to create templates in Angular is to put
- * them directly into your HTML file and use the `<script type="text/ng-template">` syntax.
- * So here is one way to put home.html into our app:
+ * them directly into your HTML file and use the `<script type="text/ng-templates">` syntax.
+ * So here is one way to put page-notice.html into our app:
  *
  * ```html
- * <script id="home" type="text/ng-template">
+ * <script id="home" type="text/ng-templates">
  *   <!-- The title of the ion-view will be shown on the navbar -->
  *   <ion-view view-title="Home">
  *     <ion-content ng-controller="HomeCtrl">
@@ -11478,7 +11478,7 @@ IonicModule
  * </script>
  * ```
  *
- * This is good to do because the template will be cached for very fast loading, instead of
+ * This is good to do because the templates will be cached for very fast loading, instead of
  * having to fetch them from the network.
  *
  * ## Caching
@@ -11523,7 +11523,7 @@ IonicModule
  * $stateProvider.state('myState', {
  *    cache: false,
  *    url : '/myUrl',
- *    templateUrl : 'my-template.html'
+ *    templateUrl : 'my-templates.html'
  * })
  * ```
  *
