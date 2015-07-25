@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in page-search.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.constants','starter.controllers', 'starter.services'])
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
@@ -42,10 +42,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 templateUrl: 'templates/page-dashboard.html',
                 controller: 'DashboardCtrl'
             })
+            .state('kampongku', {
+                url: '/kampongku',
+                templateUrl: 'templates/page-kampongku.html',
+                controller: 'KampongCtrl'
+            })
+            .state('activities', {
+                url: '/activities',
+                templateUrl: 'templates/page-activities.html',
+                controller: 'ActivityCtrl'
+            })
             .state('notice', {
                 url: '/notice',
                 templateUrl: 'templates/page-notice.html',
                 controller: 'NoticeCtrl'
+            })
+            .state('notice-detail', {
+                url: '/notice-detail',
+                templateUrl: 'templates/page-notice-details.html',
+                controller: 'NoticeDetailCtrl'
+            })
+            .state('pasar', {
+                url: '/pasar',
+                templateUrl: 'templates/page-pasar.html',
+                controller: 'PasarCtrl'
+            })
+            .state('moment', {
+                url: '/moment',
+                templateUrl: 'templates/page-moment.html',
+                controller: 'MomentCtrl'
+            })
+            .state('message', {
+                url: '/message',
+                templateUrl: 'templates/page-message.html',
+                controller: 'MessageCtrl'
+            })
+            .state('corner', {
+                url: '/corner',
+                templateUrl: 'templates/page-corner.html',
+                controller: 'CornerCtrl'
             })
             .state('setting', {
                 url: '/setting',

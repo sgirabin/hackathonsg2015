@@ -1,14 +1,32 @@
-<ion-view ng-controller="DashboardCtrl" view-title="KampongKu">
+<ion-view ng-controller="LoginCtrl" view-title="KampongKu">
 
     <ion-header-bar class="bar bar-header bar-stable">
+        <ion-nav-bar ng-controller="CommonCtrl">
+            <ion-nav-back-button class="button-clear" ng-click="navToPreviousPage()">
+                <i class="ion-arrow-left-c"></i> Back
+            </ion-nav-back-button>
+        </ion-nav-bar>
         <h1 class="title">KampongKu</h1>
     </ion-header-bar>
 
-    <ion-content>
-
+    <ion-content has-header="false" padding="true">
+        <form class="list center-form" ng-submit="doLogin(user)" novalidate>
+            <div>{{ message }}</div>
+            <label class="item item-input">
+                <span class="input-label" ng-model="user.username">Username</span>
+                <input type="text">
+            </label>
+            <label class="item item-input">
+                <span class="input-label" ng-model="user.password">Password</span>
+                <input type="password">
+            </label>
+            <button type="submit" class="button button-block button-positive">
+                Sign In
+            </button>
+        </form>
     </ion-content>
 
-    <ion-footer-bar class="bar bar-footer bar-stable">
+    <ion-footer-bar class="bar bar-footer bar-stable bar-assertive">
         <div class="title">Copyright @2015 by R3Team</div>
     </ion-footer-bar>
 

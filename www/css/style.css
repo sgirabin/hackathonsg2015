@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 
 
-.form-postal-code {
+.center-form {
   width: 300px;
   margin: 200px auto;
 }
@@ -10,3 +10,9 @@
  margin-left: 10px;
  margin-right: 10px;
 }
+
+/**
+.scroll-content {
+    background: url("../img/background.jpg");
+}
+**/
