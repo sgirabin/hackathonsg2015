@@ -2,8 +2,8 @@
 
     <ion-content class="padding">
 
-        <div class="list">
-            <a ng-repeat="item in items" href="#/kampongku/{{item.id}}" class="item item-thumbnail-left">
+        <div class="list card" ng-repeat="item in items" >
+            <a href="#/kampongku/{{item.id}}" class="item item-thumbnail-left">
                 <img ng-src="{{ item.image }}">
                 <h2>{{ item.title }}</h2>
                 <h4 class="assertive">{{ item.notifications }}</h4>

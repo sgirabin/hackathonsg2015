@@ -235,7 +235,7 @@ angular.module('starter.controllers', [])
             image: ""
         },
         {
-            id: 4,
+            id: 5,
             title: "MP Visits",
             description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
             schedule: "5 August 2015, 1-5PM",
@@ -250,7 +250,29 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PasarCtrl', function($scope, $state) {
-    
+        $scope.items = [
+            {
+                id: 1,
+                title: "Hari Raya Cookie",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                location: "",
+                image: ""
+            },
+            {
+                id: 2,
+                title: "Homemade Barley",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                location: "",
+                image: ""
+            },
+            {
+                id: 3,
+                title: "Delicious Nasi Padang",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                location: "",
+                image: ""
+            }
+        ];
 })
 
 .controller('MomentCtrl', function($scope, $state) {
