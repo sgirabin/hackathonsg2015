@@ -1,42 +1,65 @@
 <ion-view view-title="Notice Board" ng-controller="NoticeCtrl">
 
     <ion-content class="padding">
-        <div class="list">
-            <a class="item item-thumbnail-left" href="#">
-                <img src="cover.jpg">
-                <h2>Pretty Hate Machine</h2>
-                <p>Nine Inch Nails</p>
-            </a>
 
-        </div>
 
         <div class="list card">
             <div class="item item-divider">Recent Updates</div>
             <div class="item item-body">
-                <div>
-                    There is a fire in <b>sector 3</b>
+                <div class="list">
+                    <div ng-repeat="notice in notices" class="item ">
+                        <div >
+                            <a href="#/notice/{{notice.id}}" class="item item-thumbnail-left item-borderless">
+                                <img ng-src="{{ notice.image }}">
+                                <h2>{{ notice.title }}</h2>
+                                <h4>{{ notice.description }}</h4>
+                                <h4>{{ notice.location }}</h4>
+                                <h4>{{ notice.schedule }}</h4>
+                            </a>
+                        </div>
+                        <div class="item item-borderless tabs tabs-icon-left">
+                            <a class="tab-item" href="#">
+                                <i class="icon ion-calendar"></i>
+                                Reminder
+                            </a>
+                            <a class="tab-item" href="#">
+                                <i class="icon ion-chatbox"></i>
+                                Comment
+                            </a>
+                            <a class="tab-item" href="#">
+                                <i class="icon ion-social-facebook"></i>
+                                Share
+                            </a>
+                            <a class="tab-item" href="#">
+                                <i class="icon ion-social-twitter"></i>
+                                Tweet
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
         <div class="list card">
-            <div class="item item-divider">Health</div>
+            <div class="item item-divider">Archives</div>
             <div class="item item-body">
-                <div>
-                  You ate an apple today!
+                <div class="list">
+                    <a ng-repeat="archive in archives" href="#/kampongku/{{archive.id}}" class="item item-thumbnail-left">
+                        <img ng-src="{{ archive.image }}">
+                        <h2>{{ archive.title }}
+                        <h4>{{ archive.description }}</h4>
+                        <h4>{{ archive.location }}</h4>
+                        <h4>{{ archive.schedule }}</h4>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body">
-                <div>
-                    You have <b>29</b> meetings on your calendar tomorrow.
-                </div>
-            </div>
-        </div>
+
     </ion-content>
 
     <ion-footer-bar class="bar bar-footer bar-stable bar-assertive">
         <div class="title">Copyright @2015 by R3Team</div>
     </ion-footer-bar>
+
 </ion-view>
