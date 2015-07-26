@@ -2,13 +2,26 @@
 
 
 .center-form {
-  width: 300px;
-  margin: 200px auto;
+    width: 300px;
+    margin: 200px auto;
 }
 
 .input-postal-code {
- margin-left: 10px;
- margin-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.dashboard-image {
+    width: 50% !important;
+}
+
+.dashboard-card  {
+    margin-bottom: 0px !important;
+}
+
+.card, .dashboard-card{
+    margin: 0px !important;
 }
 
 /**

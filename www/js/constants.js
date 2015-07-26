@@ -18,3 +18,7 @@ angular.module('starter.constants', [])
     resident: 'resident',
     guest: 'guest'
 })
+
+.constant('ONEMAP', {
+    key: 'h9tY3HEAkrQKIrpw3Ilj93mx8Cph2Hw18IPPmMdD5D2X16mcVBVuQPgR+wpJSpHu8WLnS7XqXHTP0pwe8mdN3iDyXC2tD6ugZWkPBij1F/bKwixPJrBlkhKYNwdqYzbM|mv73ZvjFcSo='
+})

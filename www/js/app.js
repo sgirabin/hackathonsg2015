@@ -7,8 +7,10 @@ angular.module('starter', ['ionic', 'starter.constants','starter.controllers', '
 
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
+
+
+            console.log("Application is ready");
+
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 cordova.plugins.Keyboard.disableScroll(true);
@@ -37,15 +39,20 @@ angular.module('starter', ['ionic', 'starter.constants','starter.controllers', '
                 templateUrl: 'templates/page-search.html',
                 controller: 'SearchCtrl'
             })
+            .state('result', {
+                url: '/result',
+                templateUrl: 'templates/page-result.html',
+                controller: 'SearchCtrl'
+            })
             .state('dashboard', {
                 url: '/dashboard',
                 templateUrl: 'templates/page-dashboard.html',
                 controller: 'DashboardCtrl'
             })
-            .state('kampongku', {
-                url: '/kampongku',
-                templateUrl: 'templates/page-kampongku.html',
-                controller: 'KampongCtrl'
+            .state('location', {
+                url: '/location',
+                templateUrl: 'templates/page-location.html',
+                controller: 'LocationCtrl'
             })
             .state('activities', {
                 url: '/activities',
@@ -86,6 +93,10 @@ angular.module('starter', ['ionic', 'starter.constants','starter.controllers', '
                 url: '/setting',
                 templateUrl: 'templates/page-setting.html',
                 controller: 'SettingCtrl'
+            })
+            .state('about', {
+                url: '/about',
+                templateUrl: 'templates/page-about.html'
             });
 
         // if none of the above states are matched, use this as the fallback

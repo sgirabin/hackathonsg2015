@@ -1,98 +1,92 @@
 <ion-view ng-controller="DashboardCtrl" view-title="KampongKu">
 
     <ion-content>
-        <div class="row">
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/kampongku.jpg">
+        <div class="responsive-sm">
+            <div class="row">
+                <div class="col col-35 col-offset-5 dashboard-icon">
+                    <div class="list card list-borderless dashboard-card">
+                        <div class="item item-image">
+                            <img src="img/maps.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/location">
+                            KampongKu
+                        </a>
                     </div>
-                    <a class="item" href="/#/kampongku">
-                        KampongKu
-                    </a>
+                </div>
+                <div class="col col-35 col-offset-5">
+                    <div class="list card list-borderless dashboard-card">
+                        <div class="item item-image">
+                            <img src="img/notice.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/notice">
+                            Notifications
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/activities.png">
+            <div class="row">
+                <div class="col col-35 col-offset-5">
+                    <div class="list card list-borderless dashboard-card">
+                        <div class="item item-image">
+                            <img src="img/activity.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/activities">
+                            Activities
+                        </a>
                     </div>
-                    <a class="item" href="#/activities">
-                        Activities
-                    </a>
+                </div>
+                <div class="col col-35 col-offset-5">
+                    <div class="list card list-borderless dashboard-card">
+                        <div class="item item-image">
+                            <img src="img/pasar.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/pasar">
+                            Pasar
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/notice.png">
+            <div class="row">
+                <div class="col col-35 col-offset-5">
+                    <div class="list card list-borderless">
+                        <div class="item item-image">
+                            <img src="img/moment.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/moment">
+                            Moments
+                        </a>
                     </div>
-                    <a class="item" href="#/notice">
-                        Notice Board
-                    </a>
                 </div>
-            </div>
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/pasar.png">
+                <div class="col col-35 col-offset-5">
+                    <div class="list card list-borderless">
+                        <div class="item item-image">
+                            <img src="img/forum.png" class="dashboard-image">
+                        </div>
+                        <a class="item item-balanced text-center assertive" href="#/corner">
+                            Forums
+                        </a>
                     </div>
-                    <a class="item" href="#/pasar">
-                        Pasar
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/moment.jpg">
-                    </div>
-                    <a class="item item-balanced" href="#/moment">
-                        Resident Moment
-                    </a>
-                </div>
-            </div>
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/message.png">
-                    </div>
-                    <a class="item item-balanced" href="#/message">
-                        Messages
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/corner.png">
-                    </div>
-                    <a class="item" href="#/corner">
-                        Resident Corner
-                    </a>
-                </div>
-            </div>
-            <div class="col col-33 col-offset-10">
-                <div class="list card">
-                    <div class="item item-image">
-                        <img src="img/setting.jpg">
-                    </div>
-                    <a class="item" href="#/setting">
-                        Settings
-                    </a>
                 </div>
             </div>
         </div>
     </ion-content>
 
-    <ion-footer-bar class="bar bar-footer bar-stable bar-assertive">
-        <div class="title">Copyright @2015 by R3Team</div>
+
+    <ion-footer-bar class="bar bar-footer bar-stable">
+        <div class="tabs tabs-icon-top">
+            <a class="tab-item" href="#/dashboard">
+                <i class="icon ion-home"></i>
+                Home
+            </a>
+            <a class="tab-item" href="#/setting">
+                <i class="icon ion-gear-a"></i>
+                Settings
+            </a>
+            <a class="tab-item" href="#/about">
+                <i class="icon ion-information"></i>
+                About
+            </a>
+        </div>
     </ion-footer-bar>
 
 </ion-view>

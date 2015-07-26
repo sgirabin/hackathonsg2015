@@ -1,9 +1,9 @@
-<ion-view view-title="KampongKu" ng-controller="KampongCtrl">
+<ion-view view-title="KampongKu" ng-controller="LocationCtrl">
 
     <ion-content class="padding">
 
         <div class="list card" ng-repeat="item in items" >
-            <a href="#/kampongku/{{item.id}}" class="item item-thumbnail-left">
+            <a href="#/location/{{item.id}}" class="item item-thumbnail-left">
                 <img ng-src="{{ item.image }}">
                 <h2>{{ item.title }}</h2>
                 <h4 class="assertive">{{ item.notifications }}</h4>

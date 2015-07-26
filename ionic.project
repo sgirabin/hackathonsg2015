@@ -1,4 +1,10 @@
 {
   "name": "KampongKu",
-  "app_id": "6e237fdf"
+  "app_id": "6e237fdf",
+  "proxies": [
+    {
+      "path": "/API",
+      "proxyUrl": "http://www.onemap.sg/API"
+    }
+  ]
 }

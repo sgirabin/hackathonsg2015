@@ -1,24 +1,18 @@
 <ion-view ng-controller="SearchCtrl" view-title="Search">
-    <ion-header-bar class="bar bar-header bar-stable">
-
-        <button class="button icon ion-navicon"></button>
-        <h1 class="title">KampongKu</h1>
-
-    </ion-header-bar>
 
     <ion-content>
         <div class="center-form">
-            <div class="list input-postal-code">
+            <form class="list input-postal-code" ng-submit="getLocation(input.postalCode)" novalidate >
                 <div class="item item-input-inset">
                     <label class="item-input-wrapper">
                         <i class="icon ion-search placeholder-icon"></i>
-                        <input type="text" placeholder="Postal Code">
+                        <input type="text" placeholder="Postal Code" ng-model="input.postalCode">
                     </label>
-                    <button class="button button-small" ng-click="navToHome()">
+                    <button class="button button-small">
                         Go
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     </ion-content>
 

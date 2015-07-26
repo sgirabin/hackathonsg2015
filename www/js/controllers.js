@@ -5,10 +5,31 @@
 angular.module('starter.controllers', [])
 
 
-.controller('CommonCtrl', function($scope, $state, $ionicHistory) {
+.controller('CommonCtrl', function($scope, $state, $ionicHistory, $ionicActionSheet) {
     $scope.navToPreviousPage = function() {
         $ionicHistory.goBack();
-    }
+    };
+
+    $scope.show = function() {
+
+        // Show the action sheet
+        var hideSheet = $ionicActionSheet.show({
+            buttons: [
+                { text: 'Facebook' },
+                { text: 'Twitter' }
+            ],
+            titleText: 'Share',
+            cancelText: 'Cancel',
+            cancel: function() {
+                return false;
+            },
+            buttonClicked: function(index) {
+                return true;
+            }
+        });
+
+
+    };
 })
 
 
@@ -41,12 +62,18 @@ angular.module('starter.controllers', [])
     };
 
     $scope.doLogin = function(user) {
+
         AuthenticationService.login(user).then(function (user) {
+
             $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
             $scope.setCurrentUser(user);
+
         }, function () {
             $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
         });
+
+        var error = "Invalid username or password.";
+        $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
     };
 
     $scope.$on('event:auth-not-authenticated', function(e, rejection) {
@@ -75,17 +102,44 @@ angular.module('starter.controllers', [])
     AuthenticationService.logout();
 })
 
-.controller('SearchCtrl', function($scope, $state) {
-    $scope.navToHome = function() {
-        $state.go('dashboard');
+.controller('SearchCtrl', function($scope, $state, $http, MapService) {
+    $scope.input = {
+        postalCode: "544204"
+    };
+
+    $scope.map = {
+        token: '',
+        url: ''
     }
+
+    $scope.getLocation = function(postalCode) {
+        console.log(postalCode);
+
+        MapService.getToken().then(function (result) {
+            console.log("Token = " + result);
+            $scope.map = {
+                token: result,
+                url: 'http://www.onemap.sg/API/Services.svc/getMap?token=' + result
+            };
+            console.log("Map = " + map.url);
+            $state.go('result');
+        }, function () {
+            console.log("failed");
+        });
+
+        $state.go('result');
+    };
+
+    $scope.start = function() {
+        $state.go('dashboard');
+    };
 })
 
 .controller('DashboardCtrl', function($scope, $state, $ionicHistory) {
     $ionicHistory.clearHistory();
 })
 
-.controller('KampongCtrl', function($scope, $state) {
+.controller('LocationCtrl', function($scope, $state) {
     $scope.items = [{
         id: 1,
         title: 'Makan Place',
@@ -276,7 +330,32 @@ angular.module('starter.controllers', [])
 })
 
 .controller('MomentCtrl', function($scope, $state) {
-    
+        $scope.items = [
+            {
+                id: 1,
+                title: "Hari Raya Celebration",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                like: 3,
+                comment: 1,
+                image: ""
+            },
+            {
+                id: 2,
+                title: "National Day Dinner",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                like: 3,
+                comment: 1,
+                image: ""
+            },
+            {
+                id: 3,
+                title: "Grassroot Volunteer Activities",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                like: 3,
+                comment: 1,
+                image: ""
+            }
+        ];
 })
 
 .controller('MessageCtrl', function($scope, $state) {
@@ -284,11 +363,31 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CornerCtrl', function($scope, $state) {
-    
+        $scope.items = [
+            {
+                id: 1,
+                title: "Mother & Baby",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                image: ""
+            },
+            {
+                id: 2,
+                title: "Kids CCA",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                image: ""
+            },
+            {
+                id: 3,
+                title: "Pets",
+                description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+                image: ""
+            }
+        ];
 })
 
 .controller('SettingCtrl', function($scope, $state) {
     $scope.settings = {
-        enableFriends: true
+        enableFriends: true,
+        enablePushNotifications: true
     };
 });

@@ -8,6 +8,25 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <style>
+      html,
+      body,
+      #map {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+      }
+      #search {
+          display: block;
+          position: absolute;
+          z-index: 2;
+          top: 20px;
+          left: 74px;
+      }
+    </style>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -28,11 +47,11 @@
     <script src="js/constants.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="http://js.arcgis.com/3.14/"></script>
+
   </head>
 
   <body ng-app="starter">
-
-
 
     <ion-nav-bar ng-controller="CommonCtrl">
       <ion-nav-back-button class="button-clear" ng-click="navToPreviousPage()">
