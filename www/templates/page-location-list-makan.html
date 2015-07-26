@@ -1,0 +1,26 @@
+<ion-view view-title="KampongKu" ng-controller="LocationCtrl">
+
+    <ion-content class="padding">
+
+        <div class="list">
+            <a class="item item-avatar item-borderless" href="#">
+                <img ng-src="{{item.img}}">
+                <h2>{{item.title}}</h2>
+            </a>
+        </div>
+
+        <div class="list card" ng-repeat="subitem in subitems" >
+            <a href="#/makan-detail" class="item item-thumbnail-left">
+                <img ng-src="{{ subitem.image }}">
+                <h2>{{ subitem.title }}</h2>
+                <h4>{{ subitem.description }}</h4>
+            </a>
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar class="bar bar-footer bar-stable bar-assertive">
+        <div class="title">Copyright @2015 by R3Team</div>
+    </ion-footer-bar>
+
+</ion-view>

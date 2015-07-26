@@ -1,16 +1,28 @@
-<ion-view view-title="Resident Moment" ng-controller="MomentCtrl">
+<ion-view view-title="Activities Detail" ng-controller="ActivityDetailCtrl">
 
     <ion-content class="padding">
 
-        <div ng-repeat="item in items" class="list card" href="#/moment/{{item.id}}" >
+        <div ng-repeat="item in items" class="list card" href="#/activities/{{item.id}}" >
             <div class="item item-avatar">
-                <img ng-src="{{ item.image }}">
+                <img ng-src="{{ item.publisherImage }}">
                 <h2>{{ item.title }}</h2>
+                <p>{{ item.schedule }}</p>
+                <p>{{ item.location }}</p>
+                <div class="item tabs tabs-icon-left">
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-email"></i>
+                        Register
+                    </a>
+                    <a class="tab-item" href="#">
+                        <i class="icon ion-calendar"></i>
+                        Reminder
+                    </a>
+                </div>
             </div>
             <div class="item item-body">
                 <img class="full-image" ng-src="{{ item.eventImage }}">
                 <p>
-                    {{ item.description }}
+                   {{ item.description }}
                 </p>
                 <p>
                     <a href="#" class="subdued">{{ item.like }} Like</a>
@@ -38,6 +50,7 @@
         </div>
 
     </ion-content>
+
     <ion-footer-bar class="bar bar-footer bar-stable bar-assertive">
         <div class="title">Copyright @2015 by R3Team</div>
     </ion-footer-bar>

@@ -54,10 +54,30 @@ angular.module('starter', ['ionic', 'starter.constants','starter.controllers', '
                 templateUrl: 'templates/page-location.html',
                 controller: 'LocationCtrl'
             })
+            .state('makan', {
+                url: '/makan',
+                templateUrl: 'templates/page-location-list-makan.html',
+                controller: 'MakanCtrl',
+            })
+            .state('makan-deteail', {
+                url: '/makan-detail',
+                templateUrl: 'templates/page-location-list-makan-detail.html',
+                controller: 'MakanDetailCtrl',
+            })
+            .state('discover', {
+                url: '/discover',
+                templateUrl: 'templates/page-discover.html',
+                controller: 'DiscoverCtrl'
+            })
             .state('activities', {
                 url: '/activities',
                 templateUrl: 'templates/page-activities.html',
                 controller: 'ActivityCtrl'
+            })
+            .state('activities-detail', {
+                url: '/activities-detail',
+                templateUrl: 'templates/page-activities-detail.html',
+                controller: 'ActivityDetailCtrl'
             })
             .state('notice', {
                 url: '/notice',

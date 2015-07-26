@@ -2,8 +2,17 @@
 
     <ion-content class="padding">
 
+        <div class="list card" >
+            <a href="#/discover" class="item item-thumbnail-left">
+                <img src="img/discover.png">
+                <h2>Discover</h2>
+                <h4 class="assertive">Find amenities nearby..</h4>
+            </a>
+        </div>
+
         <div class="list card" ng-repeat="item in items" >
-            <a href="#/location/{{item.id}}" class="item item-thumbnail-left">
+
+            <a href="{{item.url}}" class="item item-thumbnail-left">
                 <img ng-src="{{ item.image }}">
                 <h2>{{ item.title }}</h2>
                 <h4 class="assertive">{{ item.notifications }}</h4>
